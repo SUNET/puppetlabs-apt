@@ -7,6 +7,7 @@ class apt::update {
     refreshonly => true,
     timeout     => $apt::update_timeout,
     tries       => $apt::update_tries,
-    try_sleep   => 1
+    try_sleep   => 1,
+    returns     => [0,100]
   }
 }
