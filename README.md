@@ -58,7 +58,7 @@ include apt
 
 **Warning:** Using short key IDs presents a serious security issue, potentially leaving you open to collision attacks. We recommend you always use full fingerprints to identify your GPG keys. This module allows short keys, but issues a security warning if you use them.
 
-Declare the `apt::key` class:
+Declare the `apt::key` defined type:
 
 ```puppet
 apt::key { 'puppetlabs':
@@ -150,7 +150,7 @@ apt::source { 'puppetlabs':
     'id'     => '6F6B15509CF8E59E6E469F327F438280EF8D349F',
     'server' => 'pgp.mit.edu',
   },
-},
+}
 ```
 
 ### Configure Apt from Hiera
@@ -192,21 +192,21 @@ apt::source { "archive.ubuntu.com-${lsbdistcodename}":
   key      => '630239CC130E1A7FD81A27B140976EAF437D05B5',
   repos    => 'main universe multiverse restricted',
 }
- 
+
 apt::source { "archive.ubuntu.com-${lsbdistcodename}-security":
   location => 'http://archive.ubuntu.com/ubuntu',
   key      => '630239CC130E1A7FD81A27B140976EAF437D05B5',
   repos    => 'main universe multiverse restricted',
   release  => "${lsbdistcodename}-security"
 }
- 
+
 apt::source { "archive.ubuntu.com-${lsbdistcodename}-updates":
   location => 'http://archive.ubuntu.com/ubuntu',
   key      => '630239CC130E1A7FD81A27B140976EAF437D05B5',
   repos    => 'main universe multiverse restricted',
   release  => "${lsbdistcodename}-updates"
 }
- 
+
 apt::source { "archive.ubuntu.com-${lsbdistcodename}-backports":
  location => 'http://archive.ubuntu.com/ubuntu',
  key      => '630239CC130E1A7FD81A27B140976EAF437D05B5',
