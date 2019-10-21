@@ -12,9 +12,9 @@ if $pin_release != '' {
     ].filter |$x| { $x != undef }
    "release ${options.join(', ')}" }
 
-elsif $version and "${version}".length > 0 {
+elsif $version {
    "version ${version}" }
-elsif $origin and $origin.length > 0 {
+elsif $origin {
    "origin ${origin}" }
 else {
   "release a=${name}" #Default value
